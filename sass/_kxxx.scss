@@ -1,3 +1,71 @@
+
+/* -- 重定义 ---*/
+$kxxx-link-color : $gray-dark;
+$kxxx-header-height : 75px;
+
+a{
+  color: $gray-dark;
+}
+a:hover{
+  color: $link-color;
+  text-decoration: none;
+}
+
+
+/* -- 常用 -- */
+hr.kxxx-line {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.kxxx-header a{
+  color: #9d9d9d;
+}
+.navbar-nav .current-menu-item > a{
+  color: #fff !important;
+  background-color: #090909;
+}
+
+  //.kxxx-header{
+//  height: $kxxx-header-height;
+//  position: fixed; /* Set the navbar to fixed position */
+//  z-index:99999;
+//  top: 0; /* Position the navbar at the top of the page */
+//  left: 0;
+//  width: 100%; /* Full width */
+//  background-color: #23282d;
+//  color: floralwhite;
+//}
+
+.kxxx-main{
+  padding-top: $kxxx-header-height + 5px;
+}
+
 .kxxx-content{
-  height: 100px;
+  //margin-right: 10px;
+  padding: 0 80px 10px 0;
+}
+.kxxx-sidbar{
+
+}
+
+.entry-footer{
+  font-size: 13px;
+}
+/*---- sidbar ----*/
+.kxxx-sidbar section ul{
+  padding-left: 16px;
+}
+.kxxx-sidbar section ul li{
+  list-style: none;
+  font-size: 13px;
+}
+
+
+/*-----single -------*/
+.kxxx-single-title{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

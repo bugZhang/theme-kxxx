@@ -1,38 +1,114 @@
-.content-area {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
+//.content-area {
+//	float: left;
+//	margin: 0 (-$size__site-sidebar) 0 0;
+//	width: $size__site-main;
+//}
+
+//.site-content .widget-area {
+//	float: right;
+//	overflow: hidden;
+//	width: $size__site-sidebar;
+//}
+
+//.site-main {
+//	margin: 0 $size__site-sidebar 0 0;
+//}
+//
+//
+//.site-footer {
+//	clear: both;
+//	width: $size__site-main;
+//}
+//
+//@mixin content-area{
+//	float: left;
+//}
+//
+//@media (min-width:768px ){
+//	.site-content{
+//		width: 750px;
+//	}
+//	.site-content .content-area{
+//		@include content-area;
+//		margin: 0;
+//		width:$size__site-main;
+//	}
+//	.site-content .widget-area{
+//		display: none;
+//	}
+//}
+//
+//@media (min-width:992px ){
+//	.site-content{
+//		width: 970px;
+//	}
+//	.site-content .content-area{
+//		@include content-area;
+//		margin: 0;
+//		width:$size__site-main;
+//	}
+//	.site-content .widget-area{
+//		display: none;
+//	}
+//}
+//@media (min-width:1200px ){
+//	.site-content{
+//		width: 1170px;
+//	}
+//	.site-content .content-area {
+//		float: left;
+//		margin: 0 (-$size__site-sidebar) 0 0;
+//		width: $size__site-main;
+//	}
+//	.site-content .widget-area{
+//		display: block;
+//		float: right;
+//		overflow: hidden;
+//		width: $size__site-sidebar;
+//	}
+//}
+
+
+
+
+.site-content{
 	width: $size__site-main;
 }
 
-.site-main {
-	margin: 0 $size__site-sidebar 0 0;
-}
+@media all and (max-width: 1200px) {
 
-.site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: $size__site-sidebar;
-}
-
-.site-footer {
-	clear: both;
-	width: $size__site-main;
-}
-
-@media (min-width:768px ){
 	.site-content{
-		width: 750px;
+		padding:100px;
+	}
+
+	.site-content .content-area {
+		float: left;
+		width: $size__content-area;
+		margin-right: 5%;
+	}
+
+	.site-content .widget-area {
+		float: right;
+		width: $size__widget_area;
+		display: block;
 	}
 }
 
-@media (min-width:992px ){
+@media all and (max-width: 768px) {
+
 	.site-content{
-		width: 970px;
+		padding:20px;
+	}
+
+	.site-content .content-area{
+		float: left;
+		width: $size__site-main;
+	}
+
+	.site-content .widget-area{
+		display: none;
 	}
 }
-@media (min-width:1200px ){
-	.site-content{
-		width: 1170px;
-	}
-}
+
+
 

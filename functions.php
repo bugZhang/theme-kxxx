@@ -107,8 +107,8 @@ function kxxx_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'kxxx' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'kxxx_widgets_init' );
@@ -153,3 +153,14 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+function wpdocs_custom_excerpt_length( $length ) {
+    return 300;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+function wpdocs_excerpt_more( $more ) {
+    return '.....';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
