@@ -49,6 +49,7 @@ function kxxx_entry_footer() {
 
     $splitSign  = '&nbsp;&nbsp;/&nbsp;&nbsp;';
 
+    echo "^_^" . $splitSign;
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -77,10 +78,6 @@ function kxxx_entry_footer() {
 		echo '</span>';
 		echo $splitSign;
 	}
-
-	if('post' == get_post_type()){
-	    echo get_the_author();
-    }
 
 	edit_post_link(
 		sprintf(

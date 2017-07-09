@@ -14,7 +14,8 @@
 
 get_header(); ?>
 
-    <div class="col-md-9 kxxx-content">
+    <div class="col-md-9">
+        <div class="kxxx-content">
         <?php
         while ( have_posts() ) : the_post();
 
@@ -27,6 +28,7 @@ get_header(); ?>
 
         endwhile; // End of the loop.
         ?>
+        </div>
     </div>
 
 <?php

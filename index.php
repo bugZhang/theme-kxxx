@@ -14,8 +14,9 @@
 
 get_header(); ?>
 
-	<div class="col-md-9 kxxx-content">
+	<div class="col-md-9 ">
 
+        <div class="kxxx-content">
         <?php
         if ( have_posts() ) :
 
@@ -46,8 +47,8 @@ get_header(); ?>
             get_template_part( 'template-parts/content', 'none' );
 
         endif; ?>
+        </div>
     </div>
-
 <?php
 
 

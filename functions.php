@@ -106,7 +106,7 @@ function kxxx_widgets_init() {
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'kxxx' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'after_widget'  => '</section><hr class="kxxx-line">',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );

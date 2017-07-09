@@ -25,7 +25,6 @@ hr.kxxx-line {
 }
 .navbar-nav .current-menu-item > a{
   color: #fff !important;
-  background-color: #090909;
 }
 
   //.kxxx-header{
@@ -41,14 +40,25 @@ hr.kxxx-line {
 
 .kxxx-main{
   padding-top: $kxxx-header-height + 5px;
+
 }
 
 .kxxx-content{
   //margin-right: 10px;
-  padding: 0 80px 10px 0;
+  //padding: 0 36px 10px 0;
+  padding:10px 12px 12px 10px;
+  border:1px solid #e1e1e8;
+  border-radius: 4px;
 }
-.kxxx-sidbar{
 
+.kxxx-content video{
+  @extend .center-block;
+}
+
+.kxxx-sidbar{
+  padding:10px 12px 12px 10px;
+  border:1px solid #e1e1e8;
+  border-radius: 4px;
 }
 
 .entry-footer{
@@ -61,6 +71,11 @@ hr.kxxx-line {
 .kxxx-sidbar section ul li{
   list-style: none;
   font-size: 13px;
+}
+
+.kxxx-sidbar .widget_media_image figure{
+
+  @extend .center-block;
 }
 
 
