@@ -27,25 +27,11 @@ hr.kxxx-line {
   color: #fff !important;
 }
 
-  //.kxxx-header{
-//  height: $kxxx-header-height;
-//  position: fixed; /* Set the navbar to fixed position */
-//  z-index:99999;
-//  top: 0; /* Position the navbar at the top of the page */
-//  left: 0;
-//  width: 100%; /* Full width */
-//  background-color: #23282d;
-//  color: floralwhite;
-//}
-
 .kxxx-main{
   padding-top: $kxxx-header-height + 5px;
-
 }
 
 .kxxx-content{
-  //margin-right: 10px;
-  //padding: 0 36px 10px 0;
   padding:10px 12px 12px 10px;
   border:1px solid #e1e1e8;
   border-radius: 4px;
@@ -64,6 +50,17 @@ hr.kxxx-line {
 .entry-footer{
   font-size: 13px;
 }
+
+.footer{
+  //margin-top: 30px;
+  color: #777;
+  padding: 20px 0;
+  border-top: 1px solid #e5e5e5;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
 /*---- sidbar ----*/
 .kxxx-sidbar section ul{
   padding-left: 16px;
@@ -74,7 +71,6 @@ hr.kxxx-line {
 }
 
 .kxxx-sidbar .widget_media_image figure{
-
   @extend .center-block;
 }
 

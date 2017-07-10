@@ -15,9 +15,8 @@
 	</div><!-- #container -->
 
 
-    <footer class="footer ">
+    <footer class="footer" id="kxxx-footer">
         <div class="container">
-            <hr>
             <div class="row footer-top">
                 <div class="col-sm-12 col-lg-12 center-block">
                     <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kxxx' ) ); ?>"><?php
