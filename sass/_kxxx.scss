@@ -52,12 +52,12 @@ hr.kxxx-line {
 }
 
 .footer{
-  //margin-top: 30px;
+  margin-top: 30px;
   color: #777;
   padding: 20px 0;
   border-top: 1px solid #e5e5e5;
   width: 100%;
-  position: absolute;
+  //position: absolute;
   bottom: 0;
 }
 
@@ -79,4 +79,15 @@ hr.kxxx-line {
 .kxxx-single-title{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+/**------- 自带样式修改 --- **/
+.post-navigation{
+  @include clearfix;
+}
+.nav-previous{
+  float: left;
+}
+.nav-next{
+  float: right;
 }

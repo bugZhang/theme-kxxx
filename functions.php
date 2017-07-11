@@ -164,3 +164,15 @@ function wpdocs_excerpt_more( $more ) {
     return '.....';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+function custom_navigation_markup_template(){
+
+    $html   = '
+    <nav class="navigation %1$s" role="navigation">
+		    <h4 class="screen-reader-text">%2$s</h4>
+		    <div class="nav-links">%3$s</div>
+	        </nav>';
+    return $html;
+}
+
+add_filter('navigation_markup_template', 'custom_navigation_markup_template');
