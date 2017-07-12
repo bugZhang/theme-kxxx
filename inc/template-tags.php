@@ -49,7 +49,6 @@ function kxxx_entry_footer() {
 
     $splitSign  = '&nbsp;&nbsp;/&nbsp;&nbsp;';
 
-    echo "^_^" . $splitSign;
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -57,26 +56,24 @@ function kxxx_entry_footer() {
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
 			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'kxxx' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-            echo $splitSign;
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'kxxx' ) );
 		if ( $tags_list ) {
+            echo $splitSign;
 			/* translators: 1: list of tags. */
 			printf( '<span class="tags-links">' . esc_html__( ' %1$s', 'kxxx' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-            echo $splitSign;
 		}
         echo the_date();
-        echo $splitSign;
 
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+        echo $splitSign;
 		echo '<span class="comments-link">';
         echo '评论(' . get_comments_number( get_the_ID() ) . ')';
 		echo '</span>';
-		echo $splitSign;
 	}
 
 	edit_post_link(
@@ -100,4 +97,68 @@ function kxxx_entry_footer() {
 
 
 }
+endif;
+
+
+if(! function_exists('kxxx_single_content_header') ) :
+
+    function kxxx_single_content_header(){
+        the_title( '<h3 class="kxxx-single-title text-center">', '</h3>' );
+
+        echo '<div class="text-center">';
+        $splitSign  = '&nbsp;&nbsp;/&nbsp;&nbsp;';
+
+        if ( 'post' === get_post_type() ) {
+            /* translators: used between list items, there is a space after the comma */
+            $categories_list = get_the_category_list( esc_html__( ', ', 'kxxx' ) );
+            if ( $categories_list ) {
+                printf( '<span class="cat-links">' . esc_html__( '%1$s', 'kxxx' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+                echo $splitSign;
+            }
+
+            /* translators: used between list items, there is a space after the comma */
+            $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'kxxx' ) );
+            if ( $tags_list ) {
+                printf( '<span class="tags-links">' . esc_html__( ' %1$s', 'kxxx' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+                echo $splitSign;
+            }
+            echo the_date();
+
+        }
+
+        if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+            echo $splitSign;
+            echo '<span class="comments-link">';
+            echo '评论(' . get_comments_number( get_the_ID() ) . ')';
+            echo '</span>';
+        }
+
+        edit_post_link(
+            sprintf(
+                wp_kses(
+                /* translators: %s: Name of current post. Only visible to screen readers */
+                    __( 'Edit <span class="screen-reader-text">%s</span>', 'kxxx' ),
+                    array(
+                        'span' => array(
+                            'class' => array(),
+                        ),
+                    )
+                ),
+                get_the_title()
+            ),
+            '<span class="edit-link">',
+            '</span>'
+        );
+
+        echo '</div> <br/>';
+    }
+
+endif;
+
+if(! function_exists('kxxx_single_content_footer') ) :
+
+function kxxx_single_content_footer(){
+
+}
+
 endif;

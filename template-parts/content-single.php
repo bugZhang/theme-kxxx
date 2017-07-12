@@ -11,13 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h3 class="kxxx-single-title text-center">', '</h3>' );
-		else :
-			the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
-		endif;
-		?>
+		<?php kxxx_single_content_header();?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -46,6 +40,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php kxxx_entry_footer(); ?>
+		<?php kxxx_single_content_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
