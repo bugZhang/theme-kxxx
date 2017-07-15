@@ -1,4 +1,5 @@
 {
   "/mix.js": "/mix.js",
-  "/style.css": "/style.css"
+  "/style.css": "/style.css",
+  "/js/jquery.pin.js": "/js/jquery.pin.js"
 }

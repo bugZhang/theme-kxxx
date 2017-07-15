@@ -1,7 +1,6 @@
 
 /* -- 重定义 ---*/
 $kxxx-link-color : $gray-dark;
-$kxxx-header-height : 75px;
 
 a{
   color: $gray-dark;
@@ -28,7 +27,7 @@ hr.kxxx-line {
 }
 
 .kxxx-main{
-  padding-top: $kxxx-header-height + 5px;
+  padding-top: 85px;
 }
 
 .kxxx-content{

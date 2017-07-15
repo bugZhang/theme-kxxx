@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <div class="col-md-3 hidden-sm hidden-xs">
-    <div class="kxxx-sidbar affix">
+    <div class="kxxx-sidbar ">
         <?php dynamic_sidebar( 'sidebar-1' ); ?>
     </div>
 </div>
