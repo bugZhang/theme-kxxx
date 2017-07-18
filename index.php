@@ -40,7 +40,12 @@ get_header(); ?>
 
             endwhile;
 
-            the_posts_navigation();
+            the_posts_pagination( array(
+                'prev_text'          => '&laquo;',
+                'next_text'          => '&raquo;',
+                'mid_size'           => 3,
+                'screen_reader_text'    => ' '
+            ) );
 
         else :
 

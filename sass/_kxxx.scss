@@ -50,6 +50,67 @@ hr.kxxx-line {
   max-width:700px;
 }
 
+//.pagination .nav-links>a, .pagination .nav-links>span{
+//  position: relative;
+//  float: left;
+//  padding: 6px 12px;
+//  margin-left: -1px;
+//  line-height: 1.42857143;
+//  color: #337ab7;
+//  text-decoration: none;
+//  background-color: #fff;
+//  border: 1px solid #ddd;
+//}
+.navigation.pagination{
+  width: 100%;
+}
+.navigation.pagination .screen-reader-text{
+  display: none;
+}
+
+@mixin page-numbers{
+  position: relative;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #111;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.pagination a.page-numbers{
+  @include page-numbers;
+  &:hover{
+    z-index: 2;
+    color: #23527c;
+    background-color: #eee;
+    border-color: #ddd;
+  }
+  &:focus{
+    z-index: 2;
+    color: #23527c;
+    background-color: #eee;
+    border-color: #ddd;
+  }
+}
+.pagination .page-numbers.current{
+  @include page-numbers;
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #9d9d9d;
+  border-color: #d5dde0;
+}
+
+
+.navigation .nav-links{
+  height: 40px;
+  //border: 1px solid #e1e1e8;
+  //border-radius: 4px;
+  text-align: center;
+}
+
 .kxxx-sidbar{
   padding:10px 12px 10px 12px;
   border:1px solid #e1e1e8;
