@@ -47,6 +47,16 @@ function kxxx_setup() {
 		'menu-1' => esc_html__( 'Primary', 'kxxx' ),
 	) );
 
+    add_theme_support( 'post-formats', array(
+        'aside',
+        'image',
+        'video',
+        'quote',
+        'link',
+        'gallery',
+        'audio',
+    ) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -181,3 +191,19 @@ function custom_navigation_markup_template(){
 }
 
 add_filter('navigation_markup_template', 'custom_navigation_markup_template');
+
+function kxxx_show_video_main(){
+
+    if(has_post_format('video') && !is_single() && !is_page()){
+        $post = get_post_field('post_content');
+        if($post){
+            $preg = "/<video\s*.*>\s*.*<\/video>$/";
+            $match = preg_match($preg, $post, $videos);
+            if($match){
+                $video = $videos[0];
+                $preg = "/style=\".*?\"/";
+                echo preg_replace($preg, 'style="width:480px;height:360px;"', $video);
+            }
+        }
+    }
+}

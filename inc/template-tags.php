@@ -48,6 +48,7 @@ if ( ! function_exists( 'kxxx_entry_footer' ) ) :
 function kxxx_entry_footer() {
 
     $splitSign  = '&nbsp;&nbsp;/&nbsp;&nbsp;';
+    $footer_html    =  array();
 
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
@@ -55,26 +56,24 @@ function kxxx_entry_footer() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'kxxx' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'kxxx' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+            $footer_html[] = sprintf( '<span class="cat-links">' . esc_html__( '%1$s', 'kxxx' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'kxxx' ) );
 		if ( $tags_list ) {
-            echo $splitSign;
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( ' %1$s', 'kxxx' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+            $footer_html[] = sprintf( '<span class="tags-links">' . esc_html__( ' %1$s', 'kxxx' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
-        echo the_date();
+        $footer_html[] = get_the_date();
 
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-        echo $splitSign;
-		echo '<span class="comments-link">';
-        echo '评论(' . get_comments_number( get_the_ID() ) . ')';
-		echo '</span>';
+        $footer_html[] =  '<span class="comments-link">' . '评论(' . get_comments_number( get_the_ID() ) . ')' . '</span>';
 	}
+
+	echo implode($splitSign, $footer_html);
 
 	edit_post_link(
 		sprintf(

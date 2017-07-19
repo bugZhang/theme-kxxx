@@ -36,7 +36,11 @@
                     get_the_title()
                 ) );
             else :
+                the_post_thumbnail('full', 'class=img-responsive kxxx-thumb');
                 the_excerpt();
+
+                kxxx_show_video_main();
+
             endif;
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kxxx' ),

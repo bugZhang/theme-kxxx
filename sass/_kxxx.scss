@@ -46,21 +46,19 @@ hr.kxxx-line {
 .kxxx-content video{
   @extend .center-block;
 }
-.kxxx-content img{
-  max-width:700px;
-}
 
-//.pagination .nav-links>a, .pagination .nav-links>span{
-//  position: relative;
-//  float: left;
-//  padding: 6px 12px;
-//  margin-left: -1px;
-//  line-height: 1.42857143;
-//  color: #337ab7;
-//  text-decoration: none;
-//  background-color: #fff;
-//  border: 1px solid #ddd;
-//}
+
+@media (min-width: $screen-lg-min) {
+  .kxxx-content img{
+    max-width:700px;
+  }
+  .kxxx-content .kxxx-thumb{
+    width: 200px;
+    height: 180px;
+    float: left;
+    margin:10px;
+  }
+}
 .navigation.pagination{
   width: 100%;
 }
@@ -119,6 +117,7 @@ hr.kxxx-line {
 
 .entry-footer{
   font-size: 13px;
+  margin-top: 30px;
 }
 
 .footer{
