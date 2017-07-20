@@ -169,6 +169,9 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+require get_template_directory() . '/inc/Kxxx_History_Widget.php';
+
+add_action( 'widgets_init', function() { register_widget( 'Kxxx_History_Widget' ); } );
 
 function wpdocs_custom_excerpt_length( $length ) {
     return 300;
@@ -207,3 +210,9 @@ function kxxx_show_video_main(){
         }
     }
 }
+
+function kxxx_ajax(){
+
+}
+
+add_action();
