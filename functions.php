@@ -211,8 +211,44 @@ function kxxx_show_video_main(){
     }
 }
 
-function kxxx_ajax(){
+/**
+ * 返回ajax数据，最多传入三个参数
+ * 第一个参数必须是返回状态，字符串类型
+ * 第二个参数可以是字符串或者是数组
+ * 当传入第三个参数时，三个参数必须都是字符串
+ * @param string $status
+ */
+function ajax_return_json($status){
 
+    $args		= func_get_args();
+    $argsNum 	= count($args);
+    $data		= array();
+    $data['status']	= $status;
+
+    if ($argsNum == 2){
+        if(is_string($args[1])){
+            $data['status']	= $status;
+            $data['info'] 	= $args[1];
+        }
+        if(is_array($args[1])){
+            $data = array_merge($data, $args[1]);
+        }
+    }elseif ($argsNum == 3){
+        if(is_string($args[0]) && is_string($args[1]) && is_string($args[2])){
+            $data['status'] = $args[0];
+            $data['info'] = $args[1];
+            $data['field'] = $args[2];
+        }
+    }elseif($argsNum == 0 || $argsNum > 3){
+        wlog('ajax_return_json 参数错误');
+    }
+    header('Content-Type:application/json; charset=utf-8');
+    exit(json_encode($data));
 }
 
-add_action();
+function kxxx_click_history_ajax(){
+    ajax_return_json('success');
+}
+
+add_action('wp_ajax_nopriv_click_history_ajax', 'kxxx_click_history_ajax');
+add_action('wp_ajax_click_history_ajax', 'kxxx_click_history_ajax');

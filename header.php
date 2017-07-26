@@ -20,6 +20,10 @@
 <?php wp_head(); ?>
 </head>
 
+<script type="text/javascript">
+    var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+</script>
+
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 <!--	<a class="skip-link screen-reader-text" href="#content">--><?php //esc_html_e( 'Skip to content', 'kxxx' ); ?><!--</a>-->
