@@ -247,7 +247,24 @@ function ajax_return_json($status){
 }
 
 function kxxx_click_history_ajax(){
-    ajax_return_json('success');
+    $post_id = $_GET['pid'];
+//    $post   = get_post($post_id);
+//    $title = $post->post_title;
+//    $post_name = $post->post_name;
+    $history = $_COOKIE['i_history'];
+    $historyArr = array();
+    if($history){
+        $oldArr = explode(',', $history);
+        foreach ($oldArr as $id){
+            if($id != $post_id){
+                $historyArr[] = $id;
+            }
+        }
+    }
+    array_unshift($historyArr, $post_id);
+    $historyArr = array_slice($historyArr, 0, 10, false);
+    setcookie( 'i_history', implode(',', $historyArr), 180 * DAYS_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN );
+    ajax_return_json('success', $historyArr);
 }
 
 add_action('wp_ajax_nopriv_click_history_ajax', 'kxxx_click_history_ajax');

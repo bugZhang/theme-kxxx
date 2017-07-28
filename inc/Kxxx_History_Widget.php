@@ -23,19 +23,34 @@ class Kxxx_History_Widget extends WP_Widget{
 
     public function widget( $args, $instance ) {
 
-        echo $args['before_widget'];
-
-        if ( ! empty( $instance['title'] ) ) {
-            echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+        $history = $_COOKIE['i_history'];
+        if($history){
+            echo $args['before_widget'];
+            if ( ! empty( $instance['title'] ) ) {
+                echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+            }
+            $historyArr = array();
+            echo '<ul id="kxxx-history-posts">';
+            $historyArr = explode(',', $history);
+            foreach ($historyArr as $key => $post_id){
+                $post   = get_post($post_id);
+                $title = $post->post_title;
+                echo '<li class="kxxx-history-title"> <a href="' . $post->guid . '" target="_blank">' . $title . '</a></li>';
+                if($key == 5){
+                    break;
+                }
+            }
+            echo '</ul>';
+            echo $args['after_widget'];
         }
 
-        echo '<div class="textwidget">';
 
-        echo esc_html__( $instance['text'], 'text_domain' );
+//        echo '<div class="textwidget">';
+//
+//        echo esc_html__( $instance['text'], 'text_domain' );
+//
+//        echo '</div>';
 
-        echo '</div>';
-
-        echo $args['after_widget'];
 
     }
 

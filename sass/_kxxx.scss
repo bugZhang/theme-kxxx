@@ -58,7 +58,19 @@ hr.kxxx-line {
     float: left;
     margin:10px;
   }
+  .kxxx-content .entry-content video{
+    width: 600px;
+    height: 450px;
+  }
 }
+
+@media (max-width: $screen-sm-max) {
+  .kxxx-content .entry-content video{
+    width: 320px;
+    height: 240px;
+  }
+}
+
 .navigation.pagination{
   width: 100%;
 }

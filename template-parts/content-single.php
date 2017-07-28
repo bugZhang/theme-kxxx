@@ -43,3 +43,10 @@
 		<?php kxxx_single_content_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<script type="text/javascript">
+    $(function(){
+       var id =  '<?php the_ID(); ?>';
+       kpost.i_history(id);
+    })
+</script>
