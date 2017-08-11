@@ -3,15 +3,27 @@
 class Kxxx_History_Widget extends WP_Widget{
 
 
-    function __construct($id_base, $name, array $widget_options = array(), array $control_options = array())
+//    function __construct($id_base, $name, $widget_options = array(), $control_options = array())
+//    {
+//        parent::__construct($id_base, $name, $widget_options, $control_options);
+//        parent::__construct("kxxx-history-widget", '浏览记录', $widget_options, $control_options);
+//        add_action('widgets_init', function(){
+//            register_widget('Kxxx_History_Widget');
+//        });
+
+//    }
+
+    function __construct()
     {
 //        parent::__construct($id_base, $name, $widget_options, $control_options);
         parent::__construct("kxxx-history-widget", '浏览记录');
-        add_action('widgets_init', function(){
-            register_widget('Kxxx_History_Widget');
-        });
+//        add_action('widgets_init', function(){
+//            register_widget('Kxxx_History_Widget');
+//        });
 
     }
+
+
 
     public $args = array(
         'before_title'  => '<h4 class="widgettitle">',
@@ -23,7 +35,10 @@ class Kxxx_History_Widget extends WP_Widget{
 
     public function widget( $args, $instance ) {
 
-        $history = $_COOKIE['i_history'];
+        $history = 0;
+        if(isset($_COOKIE['i_history'])){
+            $history = $_COOKIE['i_history'];
+        }
         if($history){
             echo $args['before_widget'];
             if ( ! empty( $instance['title'] ) ) {
