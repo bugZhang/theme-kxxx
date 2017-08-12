@@ -30,11 +30,6 @@
                     ?>
                 </div>
             </div>
-<!--            <div class="row footer-bottom">-->
-<!--                <ul class="list-inline text-center">-->
-<!--                    <li><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a></li><li>京公网安备11010802014853</li>-->
-<!--                </ul>-->
-<!--            </div>-->
         </div>
     </footer>
 
