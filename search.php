@@ -17,10 +17,10 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php
+				<h3 class="page-title"><?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'kxxx' ), '<span>' . get_search_query() . '</span>' );
-				?></h1>
+				?></h3>
 			</header><!-- .page-header -->
 
 			<?php
@@ -32,7 +32,7 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content-search', 'search' );
 
 			endwhile;
 
@@ -40,7 +40,7 @@ get_header(); ?>
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content-search', 'none' );
 
 		endif; ?>
 

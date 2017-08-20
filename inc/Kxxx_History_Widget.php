@@ -3,16 +3,6 @@
 class Kxxx_History_Widget extends WP_Widget{
 
 
-//    function __construct($id_base, $name, $widget_options = array(), $control_options = array())
-//    {
-//        parent::__construct($id_base, $name, $widget_options, $control_options);
-//        parent::__construct("kxxx-history-widget", '浏览记录', $widget_options, $control_options);
-//        add_action('widgets_init', function(){
-//            register_widget('Kxxx_History_Widget');
-//        });
-
-//    }
-
     function __construct()
     {
 //        parent::__construct($id_base, $name, $widget_options, $control_options);
@@ -20,7 +10,6 @@ class Kxxx_History_Widget extends WP_Widget{
 //        add_action('widgets_init', function(){
 //            register_widget('Kxxx_History_Widget');
 //        });
-
     }
 
 
