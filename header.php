@@ -22,6 +22,7 @@
 
 <script type="text/javascript">
     var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+    var is_mobile = <?php echo is_mobile() ? 1 : 0; ?>;
 </script>
 
 <body <?php body_class(); ?>>

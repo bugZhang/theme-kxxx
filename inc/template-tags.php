@@ -92,7 +92,10 @@ function kxxx_entry_footer() {
 		'</span>'
 	);
 
-	echo '<hr class="kxxx-line"></hr>';
+
+	echo '<div style="float:right;" id="kxxx-sosh-' . get_the_ID() . '"  data-post-id="' . get_the_ID() . '"></div>';
+
+	echo '<hr class="kxxx-line">';
 
 
 }
