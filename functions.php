@@ -129,14 +129,16 @@ add_action( 'widgets_init', 'kxxx_widgets_init' );
 function kxxx_scripts() {
 	wp_enqueue_style( 'kxxx-style', get_stylesheet_uri() );
 
-//	wp_enqueue_script( 'kxxx-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-//	wp_enqueue_script( 'kxxx-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	$ver = '20170821';
+    wp_enqueue_script( 'kxxx-jquery-min', 'http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js', array(), $ver, false );
+//    wp_enqueue_script( 'kxxx-jquery-pin', get_template_directory_uri() . '/js/jquery.pin.js', array('kxxx-jquery-min'), $ver, true );
+    wp_enqueue_script( 'kxxx-com', get_template_directory_uri() . '/js/kxxx.js', array(), $ver, true );
+   if(is_mobile()){
+       wp_enqueue_script( 'kxxx-sosh', get_template_directory_uri() . '/js/soshm.min.js', array(), $ver, true );
+   }else{
+       wp_enqueue_script( 'kxxx-sosh', get_template_directory_uri() . '/js/sosh.min.js', array(), $ver, true );
+   }
 
-//    wp_enqueue_script( 'kxxx-bootstrap-min', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '20151215', true );
-
-    wp_enqueue_script( 'kxxx-jquery-min', 'http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js', array(), '20151216', false );
-    wp_enqueue_script( 'kxxx-jquery-pin', get_template_directory_uri() . '/js/jquery.pin.js', array('kxxx-jquery-min'), '20151216', true );
-    wp_enqueue_script( 'kxxx-com', get_template_directory_uri() . '/js/kxxx.js', array(), '20151216', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -147,7 +149,7 @@ add_action( 'wp_enqueue_scripts', 'kxxx_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -162,12 +164,12 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+//require get_template_directory() . '/inc/jetpack.php';
 
 require get_template_directory() . '/inc/Kxxx_History_Widget.php';
 
@@ -248,9 +250,6 @@ function ajax_return_json($status){
 
 function kxxx_click_history_ajax(){
     $post_id = $_GET['pid'];
-//    $post   = get_post($post_id);
-//    $title = $post->post_title;
-//    $post_name = $post->post_name;
     $history = $_COOKIE['i_history'];
     $historyArr = array();
     if($history){
