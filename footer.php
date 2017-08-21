@@ -39,18 +39,6 @@
 <?php wp_footer(); ?>
 
 
-<!-- JiaThis Button BEGIN -->
-
-<?php
- if(is_mobile()):
-    echo '<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>';
- else:
-    echo '<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>';
- endif;
-?>
-
-<!-- JiaThis Button END -->
-
 <!-- Baidu 统计-->
 <script>
 var _hmt = _hmt || [];

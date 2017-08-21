@@ -32,7 +32,7 @@ ksosh.share = function(){
             sites: ['weixin', 'weibo', 'qzone']
         };
 
-        if(!is_mobile){
+        if(!is_mobile) {
             sosh('#' + pid, params);
         }
     })
@@ -41,5 +41,4 @@ ksosh.share = function(){
 
 $(function () {
     ksosh.share();
-
 })
