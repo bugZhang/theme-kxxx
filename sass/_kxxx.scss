@@ -30,11 +30,6 @@ hr.kxxx-line {
   padding-top: 85px;
 }
 
-.kxxx-content{
-  padding:10px 16px 10px 16px;
-  border:1px solid #e1e1e8;
-  border-radius: 4px;
-}
 
 .kxxx-content .entry-content{
   line-height: 28px;
@@ -49,6 +44,13 @@ hr.kxxx-line {
 
 
 @media (min-width: $screen-lg-min) {
+
+  .kxxx-content{
+    padding:10px 16px 10px 16px;
+    border:1px solid #e1e1e8;
+    border-radius: 4px;
+  }
+
   .kxxx-content img{
     max-width:700px;
   }
@@ -62,13 +64,45 @@ hr.kxxx-line {
     width: 600px;
     height: 450px;
   }
+
+  /**---菜单自适应--**/
+  .navbar-fixed-top{
+    position: fixed;
+  }
+  .kxxx-header ul.navbar-nav>li{
+    float: left;
+  }
 }
 
 @media (max-width: $screen-sm-max) {
   .kxxx-content .entry-content video{
-    width: 320px;
-    height: 240px;
+    width: 320px !important;
+    height: 240px !important;
   }
+  .kxxx-content .entry-content img{
+    max-width: 320px;
+  }
+
+  /**--移动端菜单--**/
+  .navbar-fixed-top{
+    position: absolute;
+  }
+  .kxxx-header ul.navbar-nav>li{
+    float: left;
+  }
+  .kxxx-header .navbar-text{
+    display: none;
+  }
+  .kxxx-header form.navbar-form{
+    display: none;
+  }
+  .kxxx-header .collapse.navbar-collapse{
+    display: block;
+  }
+  .kxxx-header .nav > li > a{
+    padding: 10px 8px;
+  }
+
 }
 
 .navigation.pagination{
@@ -173,3 +207,24 @@ hr.kxxx-line {
 .nav-next{
   float: right;
 }
+
+/**-----Baidu share-------**/
+
+@media (max-width: $screen-sm-max){
+  .bdshare-slide-button-box{
+    display: none !important;
+  }
+  .sr-bdimgshare, .sr-bdimgshare-list{
+    display: none !important;
+  }
+}
+@media (min-width: $screen-lg-min){
+  .bdshare-slide-button-box{
+    display: block;
+  }
+  .sr-bdimgshare, .sr-bdimgshare-list{
+    display: block;
+  }
+}
+
+

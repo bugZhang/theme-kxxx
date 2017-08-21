@@ -158,6 +158,28 @@ if(! function_exists('kxxx_single_content_footer') ) :
 
 function kxxx_single_content_footer(){
 
+    echo kxxx_jia_this_share_html();
+    echo '<br/><br/><br/><p><h4>本站内容均转自互联网 版权归原作者所有</h4></p><br/>';
 }
 
 endif;
+
+
+function kxxx_jia_this_share_html(){
+
+    if(is_mobile()){
+        $html = '<div class="jiathis_style_m"></div>';
+    }else{
+        $html = '<div class="jiathis_style_32x32" style="margin-left: 30px">
+            <a class="jiathis_button_weixin"></a>
+            <a class="jiathis_button_tsina"></a>
+            <a class="jiathis_button_qzone"></a>
+            <a class="jiathis_button_cqq"></a>
+            <a class="jiathis_button_copy"></a>
+            <a class="jiathis_button_qq"></a>
+            <a class="jiathis_button_renren"></a>
+            <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        </div><br/><br/>';
+    }
+    return $html;
+}
