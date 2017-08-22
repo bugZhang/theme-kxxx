@@ -161,6 +161,8 @@ if(! function_exists('kxxx_single_content_footer') ) :
 
 function kxxx_single_content_footer(){
 
+    echo '<div style="float:right;" id="kxxx-sosh"  data-post-id="' . get_the_ID() . '"></div>';
+
     echo '<br/><br/><br/><p><h4>本站内容均转自互联网 版权归原作者所有</h4></p><br/>';
 }
 
