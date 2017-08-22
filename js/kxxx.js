@@ -48,9 +48,11 @@ ksosh.singleShare = function(){
     var postId = $('#kxxx-sosh').attr('data-post-id');
     var atitle = $('#post-' + postId + ' .kxxx-single-title');
 
+
+
     var params = {
         // 分享的链接，默认使用location.href
-        url: '',
+        url: window.location.href,
         // 分享的标题，默认使用document.title
         title: atitle.text(),
         // 分享的摘要，默认使用<meta name="description" content="">content的值
