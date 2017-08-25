@@ -53,16 +53,32 @@ function kxxx_get_pc_index_ad_tpl($n){
 }
 
 function kxxx_get_pc_index_ad(){
-    $n = rand(0,2);
+    $n = rand(0,7);
     $ads = array(
         //华为广告
-        '<a href="https://c.duomai.com/track.php?site_id=70635&lid=866092&aid=387&euid=首页推广&t=https%3A%2F%2Fwww.vmall.com%2F" target="_blank"><img border="0" src="http://www.duomai.com/Public/Uploads/2017-05-31/1496207626/9617996eaab070a978be2deb5ad4d473.jpg" alt="【华为商城】nova2/nova2 puls 高颜值 爱自拍" /></a>',
+        '<iframe marginwidth=\'0\' marginheight=\'0\' hspace=\'0\' frameborder=\'0\' scrolling=\'no\' src=\'http://c.duomai.com/show.php?site_id=70635&aid=387&lid=826149&euid=pc主页华为&short=\' width=\'990\' height=\'106\'></iframe>',
 
         //京东橱窗广告
         '<script type="text/javascript">var jd_union_unid="1000349370",jd_ad_ids="506:6",jd_union_pid="CJfCycDhKxC6vYDdAxoAILC+mdcDKgA=";var jd_width=760;var jd_height=90;var jd_union_euid="";var p="ChsOVR1cFQQWNwpfBkgyTUMIRmtKRk9aZV8ETVxNNwpfBkgyFAEceyxNAGxlAxwFSVlwejJCPxMBcgtZK1MTChAEVhlZFzISBlQaWRAKEAFUK2tKRk9aZVA1FDJNQwhGaxUGEwVSHlgQAhIEXRprFDIiNw%3D%3D";</script><script type="text/javascript" charset="utf-8" src="//u-x.jd.com/static/js/auto.js"></script>',
 
         //京东旅行
         '<script type="text/javascript">var jd_union_pid="988178169";var jd_union_euid="";</script><script type="text/javascript" src="//ads-union.jd.com/static/js/union.js"></script>',
+
+        //京东数码
+        '<script type="text/javascript">var jd_union_pid="988175208";var jd_union_euid="";</script><script type="text/javascript" src="//ads-union.jd.com/static/js/union.js"></script>',
+
+        //京东生鲜
+        '<script type="text/javascript">var jd_union_pid="988165187";var jd_union_euid="";</script><script type="text/javascript" src="//ads-union.jd.com/static/js/union.js"></script>',
+
+        //京东奢侈品
+        '<script type="text/javascript">var jd_union_pid="988184168";var jd_union_euid="";</script><script type="text/javascript" src="//ads-union.jd.com/static/js/union.js"></script>',
+
+        //多麦 苏宁 最强8点
+        '<iframe marginwidth=\'0\' marginheight=\'0\' hspace=\'0\' frameborder=\'0\' scrolling=\'no\' src=\'http://c.duomai.com/show.php?site_id=70635&aid=84&lid=106170&euid=pc主页&short=\' width=\'730\' height=\'123\'></iframe>',
+
+        //多麦 苏宁 百货
+        '<script type="text/javascript" language="javascript"> duomai_sid="32562"; duomai_site_id="70635";         duomai_aid="84"; duomai_lid="104343"; duomai_euid="苏宁百货pc主页"; duomai_w = "730"; duomai_h = "123"; duomai_short = ""; </script> <script type="text/javascript" language="javascript" src="http://www.duomai.com/statics/js/show.js"></script>',
+
 
     );
     if(isset($ads[$n])){

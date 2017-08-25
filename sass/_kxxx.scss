@@ -72,6 +72,16 @@ hr.kxxx-line {
   .kxxx-header ul.navbar-nav>li{
     float: left;
   }
+
+  /**--首页广告位--**/
+  #kxxx-pc-index-ad{
+    width: 100%;
+    height: auto;
+  }
+  #kxxx-pc-index-ad img{
+    max-width: 100% !important;
+  }
+
 }
 
 @media (max-width: $screen-sm-max) {
@@ -101,6 +111,11 @@ hr.kxxx-line {
   }
   .kxxx-header .nav > li > a{
     padding: 10px 8px;
+  }
+
+  /**--首页广告位--**/
+  #kxxx-pc-index-ad{
+    display: none;
   }
 
 }
