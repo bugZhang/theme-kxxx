@@ -38,6 +38,9 @@ class Kxxx_History_Widget extends WP_Widget{
             $historyArr = explode(',', $history);
             foreach ($historyArr as $key => $post_id){
                 $post   = get_post($post_id);
+                if(!$post){
+                    continue;
+                }
                 $title = $post->post_title;
                 echo '<li class="kxxx-history-title"> <a href="' . $post->guid . '" target="_blank">' . $title . '</a></li>';
                 if($key == 5){
