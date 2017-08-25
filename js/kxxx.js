@@ -64,6 +64,7 @@ ksosh.singleShare = function(){
         sites: ['weixin', 'weibo', 'qzone']
     };
     if(is_mobile){
+        params.sites = ['weibo'];
         soshm('#kxxx-sosh', params);
     }else{
         sosh('#kxxx-sosh', params);

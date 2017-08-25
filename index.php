@@ -29,7 +29,7 @@ get_header(); ?>
             endif;
 
             /* Start the Loop */
-            $postStep = 0;
+            $postStep = 1;
             while ( have_posts() ) : the_post();
 
                 /*
