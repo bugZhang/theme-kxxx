@@ -202,7 +202,7 @@ function kxxx_show_video_main(){
     if(has_post_format('video') && !is_single() && !is_page()){
         $post = get_post_field('post_content');
         if($post){
-            $preg = "/<video\s*.*>\s*.*<\/video>$/";
+            $preg = "/<video\s*.*>\s*.*<\/video>/";
             $match = preg_match($preg, $post, $videos);
             if($match){
                 $video = $videos[0];
